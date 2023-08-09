@@ -1,0 +1,135 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f8f8f8;
+}
+
+header {
+  text-align: center;
+  background-color: #3498db;
+  color: #ffffff;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  max-height: 3rem;
+}
+
+main {
+  display: flex;
+  margin: 0 auto;
+  padding: 1rem;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+section {
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.transitioning {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.project-button {
+  display: inline-block;
+  background-color: #3498db;
+  color: #ffffff;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.project-button:hover {
+  background-color: #2980b9;
+}
+
+.project-preview {
+  flex: 1;
+  margin-top: 1rem;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-preview iframe {
+  min-width: 1000px;
+  min-height: 550px;
+  border: none;
+  transition: transform 0.3s ease;
+}
+
+.project-preview:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.2);
+}
+
+.arrow {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  position: relative;
+  z-index: 999;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.left,
+.right {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  position: absolute;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.left {
+  border-width: 20px 40px 20px 0;
+  border-color: transparent #3498db transparent transparent;
+  left: 30px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.right {
+  border-width: 20px 0 20px 40px;
+  border-color: transparent transparent transparent #3498db;
+  right: 30px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.left:hover,
+.right:hover {
+  transform: translateY(-50%) scale(1.2);
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+@media screen and (max-width: 1100px) {
+  .project-preview iframe,
+  main,
+  section {
+    min-width: 100%;
+  }
+}
