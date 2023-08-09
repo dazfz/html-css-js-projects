@@ -1,7 +1,7 @@
 const projects = [
-  { name: "Etch a sketch", url: "etch-a-sketch/index.html" },
-  { name: "Calculator", url: "calculator/index.html" },
-  { name: "Tic Tac Toe", url: "tic-tac-toe/index.html" },
+  { name: "Etch a sketch", url: "./etch-a-sketch/index.html" },
+  { name: "Calculator", url: "./calculator/index.html" },
+  { name: "Tic Tac Toe", url: "./tic-tac-toe/index.html" },
 ];
 
 let currentProjectIndex = 0;
